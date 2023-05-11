@@ -1,6 +1,13 @@
-fetch("http://localhost:5678/api/categories")
-   .then(reponse => reponse.json())
-   .then(reponse2 => console.log(reponse2))
+const gallery = document.querySelectorAll("gallery");
+
+fetch("http://localhost:5678/api/works")
+   .then(response => response.json())
+   .then(data => gallery.src = data[0].imageUrl)
+   
+  
+
+  
+
 
 
 
