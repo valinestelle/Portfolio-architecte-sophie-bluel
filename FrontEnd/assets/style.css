@@ -123,8 +123,37 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 40px;
+	margin-top: 150px;
 }
+
+/**ajout categories**/
+
+#categories {
+	display: flex;
+	justify-content: center;
+    gap: 10px;
+	margin: 30px 0 30px 0;
+    
+}
+
+#listes {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: #1D6154;
+	margin-bottom : 15px ;
+	text-align: center;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	width:  auto;
+    padding: 10px;
+	cursor: pointer;
+}
+#listes:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
