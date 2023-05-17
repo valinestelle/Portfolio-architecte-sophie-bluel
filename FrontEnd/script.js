@@ -16,7 +16,23 @@ fetch("http://localhost:5678/api/works")
       }
    })
 
-   
+   fetch("http://localhost:5678/api/works")
+   .then(response => response.json())
+   .then(data => console.log(data))
+
+   const categories = document.querySelector("#categories");
+
+   fetch("http://localhost:5678/api/works")
+   .then(response => response.json())
+   .then(function (data) {
+       for (let i = 0; i < data.length; i++) {
+       let liste = document.createElement("li");
+       liste.id = ['listes'];
+       liste.innerHTML = data[i].category.name;
+       categories.appendChild(liste);
+       }
+   })
+
    
   
 
