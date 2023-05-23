@@ -137,7 +137,7 @@ li:hover {
     
 }
 
-#listes {
+.listes {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: #1D6154;
@@ -149,7 +149,7 @@ li:hover {
     padding: 10px;
 	cursor: pointer;
 }
-#listes:hover {
+.listes:hover {
 	background-color: #1D6154;
 	color: white;
 }

@@ -1,4 +1,7 @@
 const gallery = document.querySelector(".gallery");
+const categories = document.querySelector("#categories");
+const tous = document.querySelector("#cat-tous");
+//  let datas = [];
 
 fetch("http://localhost:5678/api/works")
    .then(response => response.json())
@@ -18,23 +21,24 @@ fetch("http://localhost:5678/api/works")
 
    fetch("http://localhost:5678/api/works")
    .then(response => response.json())
-   .then(data => console.log(data))
-
-   const categories = document.querySelector("#categories");
-
-   fetch("http://localhost:5678/api/works")
-   .then(response => response.json())
    .then(function (data) {
-       for (let i = 0; i < data.length; i++) {
-       let liste = document.createElement("li");
-       liste.id = ['listes'];
-       liste.innerHTML = data[i].category.name;
-       categories.appendChild(liste);
+      // datas = data;
+       
+       let categoriesInHtml = [];
+        for (let i = 0; i < data.length; i++) {
+         if(!categoriesInHtml.includes(data[i].category.name)){
+            let liste = document.querySelector("li")
+            liste.classList = ['listes'];
+            liste.innerHTML = data[i].category.name;
+            categoriesInHtml.push(data[i].category.name);
+            categories.appendChild(liste);
+         }
        }
-   })
+      })
+
+
 
    
-  
 
   
 
