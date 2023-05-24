@@ -68,7 +68,9 @@ h1{
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
+	margin-bottom: 5em;
+	gap: 5px;
 }
 
 h1 > span {
@@ -103,12 +105,12 @@ li:hover {
 	align-items: center;
 }
 #introduction figure {
-	flex: 1
+	flex: 1.5
 }
 #introduction img {
 	display: block;
 	margin: auto;
-	width: 80%;
+	width: 75%;
 }
 
 #introduction article {
@@ -119,7 +121,7 @@ li:hover {
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+	margin-bottom: 1.5em;
 }
 #portfolio h2 {
 	text-align: center;
