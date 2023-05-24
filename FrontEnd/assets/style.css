@@ -97,8 +97,12 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
-li:hover {
+li a:hover {
 	color: #B1663C;
+}
+nav a {
+	text-decoration: none;
+	color: inherit;
 }
 
 #introduction {
@@ -184,6 +188,7 @@ margin: auto;
 #contact h2{
 	margin-bottom: 20px;
 }
+
 #contact form {
 	text-align: left;
 	margin-top:30px;
@@ -219,6 +224,7 @@ input[type="submit"]{
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
+	margin-top: 20em;
 }
 
