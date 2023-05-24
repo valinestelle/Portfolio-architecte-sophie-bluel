@@ -8,7 +8,7 @@ fetch("http://localhost:5678/api/works")
    .then(response => response.json())
    .then(function (data) {
       datas = data;
-      let liste = document.querySelector("li");
+      let liste = document.createElement("li");
       liste.classList.add('listes','active');
       liste.innerHTML = 'Tous';
       liste.id = 'cat-tous';
@@ -20,7 +20,7 @@ fetch("http://localhost:5678/api/works")
        let categoriesInHtml = [];
         for (let i = 0; i < data.length; i++) {
          if(!categoriesInHtml.includes(data[i].category.name)){
-            let liste = document.querySelector("li")
+            let liste = document.createElement("li")
             liste.classList = ['listes'];
             liste.id = 'cat-'+data[i].categoryId;
             liste.innerHTML = data[i].category.name;
