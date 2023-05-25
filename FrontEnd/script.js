@@ -1,3 +1,6 @@
+
+
+
 const gallery = document.querySelector(".gallery");
 const categories = document.querySelector("#categories");
 const tous = document.querySelector("#cat-tous");
@@ -56,6 +59,29 @@ fetch("http://localhost:5678/api/works")
 }
 
 
+let modalbutton = document.querySelector('.btnmodal');
+
+
+   modalbutton.addEventListener('click', function(e){
+      e.preventDefault();
+      let modal = document.querySelector("#modal1");
+      modal.classList.add('openmodal');
+   
+      const modalClose = modal.querySelector('.modal-close');
+      modalClose.addEventListener('click', () => {
+          modal.classList.remove("openmodal");
+      });
+
+      modal.addEventListener('click', () => {
+         modal.classList.remove('openmodal');
+      })
+   });
+
+
+
+
+
+   
 
    
 
