@@ -88,6 +88,7 @@ let modalbutton = document.querySelector('.btnmodal');
        bodyModal.innerHTML = '';
        for (let i = 0; i < datas.length; i++) {
          let figure = document.createElement("figure");
+         figure.classList.add('badge');
          let img = document.createElement("img");
          let figcaption = document.createElement("figcaption");
          img.src = datas[i].imageUrl;
@@ -100,7 +101,7 @@ let modalbutton = document.querySelector('.btnmodal');
       let supprim = document.querySelector('#supprimer');
       supprim.addEventListener('click', () => {
          bodyModal.innerHTML = '';
-      })
+      });
    })
   
 

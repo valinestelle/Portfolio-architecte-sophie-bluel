@@ -190,6 +190,19 @@ text-align: center;
 	width: 79px;
 	height: 105px;
 }
+.modal-body figure {
+	position: relative;
+}
+.badge::before {
+	content: "\f1f8";
+	position: absolute;
+	background: black;
+	color: white;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+
 
 .modal-body figcaption {
 	font-size: 12px;
