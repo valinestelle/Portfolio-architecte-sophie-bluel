@@ -74,10 +74,30 @@ let modalbutton = document.querySelector('.btnmodal');
 
       modal.addEventListener('click', () => {
          modal.classList.remove('openmodal');
-      })
+      });
    });
 
+      const bodyModal = document.querySelector(".modal-body");
 
+      fetch("http://localhost:5678/api/works")
+   .then(response => response.json())
+   .then(function (datas) {
+       bodyModal.innerHTML = '';
+       for (let i = 0; i < datas.length; i++) {
+         let figure = document.createElement("figure");
+         let img = document.createElement("img");
+         let figcaption = document.createElement("figcaption");
+         img.src = datas[i].imageUrl;
+         img.alt = datas[i].title;
+         figcaption.innerHTML = "éditer";
+         figure.appendChild(img);
+         figure.appendChild(figcaption);
+         bodyModal.appendChild(figure);
+      };
+   })
+  
+
+   
 
 
 
