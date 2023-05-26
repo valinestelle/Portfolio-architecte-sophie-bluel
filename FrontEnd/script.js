@@ -75,6 +75,9 @@ let modalbutton = document.querySelector('.btnmodal');
       modal.addEventListener('click', () => {
          modal.classList.remove('openmodal');
       });
+      modal.children[0].addEventListener('click', function(e){
+         e.stopPropagation();
+      })
    });
 
       const bodyModal = document.querySelector(".modal-body");
@@ -94,6 +97,10 @@ let modalbutton = document.querySelector('.btnmodal');
          figure.appendChild(figcaption);
          bodyModal.appendChild(figure);
       };
+      let supprim = document.querySelector('#supprimer');
+      supprim.addEventListener('click', () => {
+         bodyModal.innerHTML = '';
+      })
    })
   
 

@@ -203,10 +203,12 @@ text-align: center;
 }
 .btn {
   height: 36px;
+  cursor: pointer;
 }
 .modal-footer p {
 	font-size: 14px;
 	color:#D65353;
+	cursor: pointer;
 }
 
 /**ajout categories**/
