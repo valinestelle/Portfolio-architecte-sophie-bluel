@@ -104,6 +104,10 @@ nav a {
 	text-decoration: none;
 	color: inherit;
 }
+.mdp-forget {
+	display: flex;
+	justify-content: center;
+}
 
 #introduction {
 	display: flex;

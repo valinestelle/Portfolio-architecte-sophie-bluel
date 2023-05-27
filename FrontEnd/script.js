@@ -1,11 +1,9 @@
-
-
-
 const gallery = document.querySelector(".gallery");
 const categories = document.querySelector("#categories");
 const tous = document.querySelector("#cat-tous");
 let datas = [];
 let activeCategories = '';
+const token = localStorage.getItem("token");
 
 fetch("http://localhost:5678/api/works")
    .then(response => response.json())

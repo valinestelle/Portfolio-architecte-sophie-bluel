@@ -1,7 +1,23 @@
-let myForm = document.querySelector('#myForm');
+const myForm = document.querySelector('#myForm');
+const errorMessage = document.querySelector('#message-error');
+const buttonConnect = document.querySelector('#connect-button');
 
-myForm.addEventListener('submit', function(e) {
-    let myInput = document.querySelector('#email');
-    
-})
+const login = async (email, password) => {
+  try {
+    const response = await fetch("http://localhost:5678/api/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+   }
+}
+
+
+
  
