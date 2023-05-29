@@ -3,7 +3,7 @@ const errorMessage = document.querySelector('#message-error');
 const buttonConnect = document.querySelector('#connect-button');
 
 const login = async (email, password) => {
-  try {
+  
     const response = await fetch("http://localhost:5678/api/users/login", {
       method: "POST",
       headers: {
@@ -14,9 +14,11 @@ const login = async (email, password) => {
         email: email,
         password: password,
       }),
+    }).catch(function(error){
+      console.log(error);
     });
    }
-}
+
 
 
 
