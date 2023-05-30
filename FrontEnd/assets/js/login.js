@@ -19,6 +19,11 @@ const login = async (email, password) => {
     });
    }
 
+   buttonConnect.addEventListener('click', (e) => {
+    e.preventDefault();
+    login(myForm.email.value, myForm.password.value);
+   })
+
 
 
 
