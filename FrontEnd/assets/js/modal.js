@@ -1,5 +1,5 @@
 let modalbutton = document.querySelector('.btnmodal');
-
+const token = localStorage.getItem("token");
 
    modalbutton.addEventListener('click', function(e){
       e.preventDefault();
@@ -42,3 +42,5 @@ let modalbutton = document.querySelector('.btnmodal');
          bodyModal.innerHTML = '';
       });
    })
+
+   
