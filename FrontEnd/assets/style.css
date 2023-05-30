@@ -140,6 +140,34 @@ nav a {
 	display: flex;
 	justify-content: center;
 }
+#message-error {
+	color: red;
+	margin-top: 10px;
+}
+.animationbtn {
+	 animation: animationbtn 0.3s ease-in-out;
+}
+@keyframes animationbtn {
+  0% {
+    background-color: #d65353;
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 #introduction {
 	display: flex;
