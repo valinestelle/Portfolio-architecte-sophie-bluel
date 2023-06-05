@@ -58,7 +58,7 @@ fetch("http://localhost:5678/api/works")
 
 document.querySelector('#barEdition').style.display= 'none';
 document.querySelector('#btnmodifier').style.display= 'none';
-document.querySelector('.btnmodal').style.display= 'none';
+document.querySelector('.btnmodal').style.display= 'block';
 
 
 

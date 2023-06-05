@@ -1,5 +1,6 @@
 let modalbutton = document.querySelector('.btnmodal');
 const token = localStorage.getItem("token");
+let btnajout = document.querySelector('.btnajout');
 
    modalbutton.addEventListener('click', function(e){
       e.preventDefault();
@@ -42,5 +43,25 @@ const token = localStorage.getItem("token");
          bodyModal.innerHTML = '';
       });
    })
+        
+   //MODAL2//
+    btnajout.addEventListener('click', function(e){
+      e.preventDefault();
+      let modal2 = document.querySelector("#modal2");
+      modal2.classList.add('openmodal');
 
-   
+      let modal = document.querySelector("#modal1");
+      modal.innerHTML = '';
+
+        const modalClose2 = modal2.querySelector('.modal-close');
+      modalClose2.addEventListener('click', () => {
+          modal2.classList.remove("openmodal");
+      });
+
+      modal2.addEventListener('click', () => {
+         modal2.classList.remove('openmodal');
+      });
+      modal2.children[0].addEventListener('click', function(e){
+         e.stopPropagation();
+      })
+    })
