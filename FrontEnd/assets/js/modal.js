@@ -50,8 +50,8 @@ let btnajout = document.querySelector('.btnajout');
       let modal2 = document.querySelector("#modal2");
       modal2.classList.add('openmodal');
 
-      let modal = document.querySelector("#modal1");
-      modal.innerHTML = '';
+      // let modal = document.querySelector("#modal1");
+      // modal.innerHTML = '';
 
         const modalClose2 = modal2.querySelector('.modal-close');
       modalClose2.addEventListener('click', () => {
