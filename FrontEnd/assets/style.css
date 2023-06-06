@@ -236,12 +236,14 @@ text-align: center;
    top: 30px;
    right: 30px;
    cursor: pointer;
+   font-family: "FontAwesome";
 }
 .modal-return {
 	position:absolute;
 	top: 30px;
 	left: 30px;
 	cursor: pointer;
+	font-family: "FontAwesome";
 }
 .modal-content p {
      display: flex;
@@ -301,17 +303,14 @@ text-align: center;
 
 #pop-up {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 15px;
 }
 #pop-up > * {
 	text-align: center;
 
-}
-
-#pop-up form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
 }
 
 #pop-up input {
@@ -322,7 +321,8 @@ text-align: center;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 #pop-up label {
-	margin: 5em 0 1em 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .btnvalider {
@@ -332,6 +332,34 @@ text-align: center;
 	color: white;
 	border: none;
 	margin-top: 30px;
+}
+
+.download {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #E8F1F6;
+	width: 420px;
+	height: 169px;
+	margin-left: 18px;
+}
+.picture {
+	font-size: 60px;
+	font-family: "FontAwesome";
+	color: #CBD6DC;
+	margin-top: 40px;
+	margin-bottom: 15px;
+}
+.btnajout {
+	background: #CBD6DC;
+	border: none;
+	color: #306685;
+	width: 173px;
+}
+.download p {
+	font-size: 10px;
+	margin-top: 15px;
 }
 
 /**ajout categories**/

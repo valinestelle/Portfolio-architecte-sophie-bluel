@@ -17,15 +17,18 @@ const login = async (email,password) => {
       }),
   }).then(function(response){
     if(response.status == 200){
-      const form = response.json();
-      const token = form.token;
-      localStorage.setItem("token", token);
-      window.location.href = "./index.html";
-      console.log(token);
+     return response.json();
+
     }else{
       errorMessage.innerHTML = "Email ou mot de passe incorrect";
       buttonConnect.classList.add("animationbtn");
     }})
+      .then(function(ResponseJson){
+      const token = ResponseJson.token;
+      localStorage.setItem("token", token);
+      window.location.href = "./index.html";
+      })
+      console.log(token)
     .catch(function(error){
       console.log(error);
     });
