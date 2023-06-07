@@ -1,7 +1,12 @@
 let modalbutton = document.querySelector('.btnmodal');
 const token = localStorage.getItem("token");
 let btnajout = document.querySelector('.btnajout');
-const modales = document.querySelector('.modales');
+const bodyModal = document.querySelector(".modal-body");
+const modalFooter = document.querySelector(".modal-footer");
+const titreModal = document.querySelector("#titreModal");
+const modalContent = document.querySelector(".modal-content");
+
+
 
    modalbutton.addEventListener('click', function(e){
       e.preventDefault();
@@ -21,8 +26,6 @@ const modales = document.querySelector('.modales');
       })
       modal1();
    });
-
-      const bodyModal = document.querySelector(".modal-body");
 
    function modal1() {
       fetch("http://localhost:5678/api/works")
@@ -45,61 +48,75 @@ const modales = document.querySelector('.modales');
       supprim.addEventListener('click', () => {
          bodyModal.innerHTML = '';
       });
-   })}
+   })};
    
         
    //MODAL2//
 
-    const mod2 = document.querySelector('#modal2');
-    const modalReturn = document.querySelector(".modal-return");
-
-
     btnajout.addEventListener('click', function(e){
       e.preventDefault();
-       modal2();
+      modal2();
     });
 
       function modal2() {
-         let title = document.createElement("p");
-         title.innerHTML= 'Ajout photo';
+         //supprimer body modal//
+         //mettre fleche retour//
+         //changer titre et body//
+         //supprimer body//
+         bodyModal.innerHTML = '';
+         modalFooter.innerHTML = '';
+         titreModal.innerHTML = '';
+         let arrowReturn = document.createElement("div")
+         arrowReturn.classList.add('modal-return');
+         let iconeArrowLeft = document.createElement("i");
+         iconeArrowLeft.classList.add('fa-light', 'fa-arrow-left');
+         let titlemodal2 = document.createElement("p");
+         titlemodal2.innerHTML= 'Ajout photo';
          let ajout = document.createElement('div');
          ajout.classList.add('download');
-         let icone = document.createElement("i");
-         icone.classList.add('fa-thin', 'fa-image', 'picture');
-         let button = document.createElement('button');
-         button.classList.add('btnajout');
-         button.innerHTML='+ Ajouter Photo';
-         let subtitle = document.createElement('p');
-         subtitle.innerHTML='jpg,png:4mo max';
-         let form = document.createElement('form');
-         form.action = '#';
-         form.method = 'post';
-         form.id = 'pop-up';
-         let label = document.createElement('label');
-         label.for = 'title';
-         label.innerHTML = 'Titre';
-         let input = document.createElement('input');
-         input.type = 'texte';
-         input.name = 'title';
-         input.id = 'titre';
-         label.for = 'category';
-         label.innerHTML ='categories';
-         input.type = 'texte';
-         input.name = 'category';
-         input.id = 'category';
-         let modalFooter = document.createElement('div');
-         modalFooter.classList.add('modal-footer');
-         button.classList.add('btnvalider');
-         button.innerHTML = 'Valider';
-         ajout.appendChild(icone);
-         ajout.appendChild(button);
-         ajout.appendChild(subtitle);
+         let iconedownload = document.createElement("i");
+         iconedownload.classList.add('fa-thin', 'fa-image', 'picture');
+         let buttonAjoutPhoto = document.createElement('button');
+         buttonAjoutPhoto.classList.add('btnajout');
+         buttonAjoutPhoto.innerHTML='+ Ajouter Photo';
+         let subtitleDownload = document.createElement('p');
+         subtitleDownload.innerHTML='jpg,png:4mo max';
+         let formulaire = document.createElement('form');
+         formulaire.action = '#';
+         formulaire.method = 'post';
+         formulaire.id = 'pop-up';
+         let labelTitle = document.createElement('label');
+         labelTitle.for = 'title';
+         labelTitle.innerHTML = 'Titre';
+         let inputTitle = document.createElement('input');
+         inputTitle.type = 'texte';
+         inputTitle.name = 'title';
+         inputTitle.id = 'titre';
+         let labelCategory = document.createElement('label');
+         labelCategory.for = 'category';
+         labelCategory.innerHTML ='categories';
+         let inputCategory = document.createElement('input');
+         inputCategory.type = 'texte';
+         inputCategory.name = 'category';
+         inputCategory.id = 'category';
+         let buttonValider = document.createElement('button');
+         buttonValider.classList.add('btnvalider');
+         buttonValider.innerHTML = 'Valider';
+         ajout.appendChild(iconedownload);
+         ajout.appendChild(buttonAjoutPhoto);
+         ajout.appendChild(subtitleDownload);
          bodyModal.appendChild(ajout);
-         form.appendChild(label);
-         form.appendChild(input);
-         bodyModal.appendChild(form);
-         modalFooter.appendChild(button);
-         bodyModal.appendChild(modalFooter);
+         formulaire.appendChild(labelTitle);
+         formulaire.appendChild(inputTitle);
+         formulaire.appendChild(labelCategory);
+         formulaire.appendChild(inputCategory);
+         bodyModal.appendChild(formulaire);
+         modalFooter.appendChild(buttonValider);
+         modalContent.appendChild(titlemodal2);
+         modalContent.appendChild(bodyModal);
+         modalContent.appendChild(modalFooter);
+         arrowReturn.appendChild(iconeArrowLeft);
+         modalContent.appendChild(arrowReturn);
       }
       
 
