@@ -1,5 +1,6 @@
 let modalbutton = document.querySelector('.btnmodal');
 const token = localStorage.getItem("token");
+const modal = document.querySelector("#modal1");
 let btnajout = document.querySelector('.btnajout');
 const bodyModal = document.querySelector(".modal-body");
 const modalFooter = document.querySelector(".modal-footer");
@@ -10,7 +11,10 @@ const modalContent = document.querySelector(".modal-content");
 
    modalbutton.addEventListener('click', function(e){
       e.preventDefault();
-      let modal = document.querySelector("#modal1");
+      modal1();
+   });
+
+   function modal1() {
       modal.classList.add('openmodal');
    
       const modalClose = modal.querySelector('.modal-close');
@@ -24,10 +28,7 @@ const modalContent = document.querySelector(".modal-content");
       modal.children[0].addEventListener('click', function(e){
          e.stopPropagation();
       })
-      modal1();
-   });
-
-   function modal1() {
+   
       fetch("http://localhost:5678/api/works")
    .then(response => response.json())
    .then(function (datas) {
@@ -44,34 +45,38 @@ const modalContent = document.querySelector(".modal-content");
          figure.appendChild(figcaption);
          bodyModal.appendChild(figure);
       };
+
+       btnajout.addEventListener('click', function(e){
+      e.preventDefault();
+      modal2();
+    });
       let supprim = document.querySelector('#supprimer');
       supprim.addEventListener('click', () => {
          bodyModal.innerHTML = '';
       });
    })};
-   
+ 
         
    //MODAL2//
 
-    btnajout.addEventListener('click', function(e){
-      e.preventDefault();
-      modal2();
-    });
+   //  btnajout.addEventListener('click', function(e){
+   //    e.preventDefault();
+   //    modal2();
+   //  });
 
       function modal2() {
-         //supprimer body modal//
-         //mettre fleche retour//
-         //changer titre et body//
-         //supprimer body//
          bodyModal.innerHTML = '';
          modalFooter.innerHTML = '';
          titreModal.innerHTML = '';
+
          let arrowReturn = document.createElement("div")
          arrowReturn.classList.add('modal-return');
          let iconeArrowLeft = document.createElement("i");
          iconeArrowLeft.classList.add('fa-light', 'fa-arrow-left');
+
          let titlemodal2 = document.createElement("p");
          titlemodal2.innerHTML= 'Ajout photo';
+
          let ajout = document.createElement('div');
          ajout.classList.add('download');
          let iconedownload = document.createElement("i");
@@ -81,6 +86,7 @@ const modalContent = document.querySelector(".modal-content");
          buttonAjoutPhoto.innerHTML='+ Ajouter Photo';
          let subtitleDownload = document.createElement('p');
          subtitleDownload.innerHTML='jpg,png:4mo max';
+
          let formulaire = document.createElement('form');
          formulaire.action = '#';
          formulaire.method = 'post';
@@ -100,8 +106,10 @@ const modalContent = document.querySelector(".modal-content");
          inputCategory.name = 'category';
          inputCategory.id = 'category';
          let buttonValider = document.createElement('button');
+
          buttonValider.classList.add('btnvalider');
          buttonValider.innerHTML = 'Valider';
+
          ajout.appendChild(iconedownload);
          ajout.appendChild(buttonAjoutPhoto);
          ajout.appendChild(subtitleDownload);
@@ -117,6 +125,8 @@ const modalContent = document.querySelector(".modal-content");
          modalContent.appendChild(modalFooter);
          arrowReturn.appendChild(iconeArrowLeft);
          modalContent.appendChild(arrowReturn);
-      }
       
-
+     
+      arrowReturn.addEventListener('click', () => {
+        modal1();
+      })}
