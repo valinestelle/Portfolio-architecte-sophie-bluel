@@ -5,6 +5,7 @@ let datas = [];
 let activeCategories = '';
 
 
+
 fetch("http://localhost:5678/api/works")
    .then(response => response.json())
    .then(function (data) {
@@ -56,9 +57,9 @@ fetch("http://localhost:5678/api/works")
    }
 }
 
-document.querySelector('#barEdition').style.display= 'none';
-document.querySelector('#btnmodifier').style.display= 'none';
-document.querySelector('.btnmodal').style.display= 'block';
+// document.querySelector('#barEdition').style.display= 'block';
+// document.querySelector('#btnmodifier').style.display= 'block';
+// document.querySelector('.btnmodal').style.display= 'block';
 
 
 

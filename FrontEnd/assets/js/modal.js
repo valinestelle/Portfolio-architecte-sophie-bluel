@@ -2,11 +2,11 @@ let modalbutton = document.querySelector('.btnmodal');
 const token = localStorage.getItem("token");
 const modal = document.querySelector("#modal1");
 let btnajout = document.querySelector('.btnajout');
+const supprimGallery = document.querySelector('#supprimer');
 const bodyModal = document.querySelector(".modal-body");
 const modalFooter = document.querySelector(".modal-footer");
 const titreModal = document.querySelector("#titreModal");
 const modalContent = document.querySelector(".modal-content");
-
 
 
    modalbutton.addEventListener('click', function(e){
@@ -50,8 +50,8 @@ const modalContent = document.querySelector(".modal-content");
       e.preventDefault();
       modal2();
     });
-      let supprim = document.querySelector('#supprimer');
-      supprim.addEventListener('click', () => {
+
+      supprimGallery.addEventListener('click', () => {
          bodyModal.innerHTML = '';
       });
    })};
@@ -100,13 +100,15 @@ const modalContent = document.querySelector(".modal-content");
          inputTitle.id = 'titre';
          let labelCategory = document.createElement('label');
          labelCategory.for = 'category';
-         labelCategory.innerHTML ='categories';
+         labelCategory.innerHTML ='Catégories';
          let inputCategory = document.createElement('input');
          inputCategory.type = 'texte';
          inputCategory.name = 'category';
          inputCategory.id = 'category';
-         let buttonValider = document.createElement('button');
+         let iconeSelectCategory = document.createElement('i');
+         iconeSelectCategory.classList.add('fa-light', 'fa-angle-down', 'iconeSelect');
 
+         let buttonValider = document.createElement('button');
          buttonValider.classList.add('btnvalider');
          buttonValider.innerHTML = 'Valider';
 
@@ -125,8 +127,12 @@ const modalContent = document.querySelector(".modal-content");
          modalContent.appendChild(modalFooter);
          arrowReturn.appendChild(iconeArrowLeft);
          modalContent.appendChild(arrowReturn);
+         formulaire.appendChild(iconeSelectCategory);
       
      
-      arrowReturn.addEventListener('click', () => {
-        modal1();
-      })}
+      arrowReturn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal1(); 
+      })};
+
+      

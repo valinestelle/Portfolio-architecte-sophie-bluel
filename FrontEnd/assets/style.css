@@ -59,7 +59,7 @@ main {
 	height: 59px;
 	background: black;
 	margin: 0%;
-	display: flex;
+	display: none;
 	justify-content: center;
 }
 .edition {
@@ -211,13 +211,14 @@ text-align: center;
 	text-decoration: none;
 	color: inherit;
 }
-.mod, .mod2 {
+.mod {
 	background-color: rgba(0, 0, 0, 0.75);
 	position: fixed;
 	inset: 0;
 	z-index: 1000;
 	display: flex;
 	visibility: hidden;
+	margin: auto;
 }
 .openmodal {
 	visibility: visible;
@@ -245,6 +246,7 @@ text-align: center;
 	cursor: pointer;
 	font-family: "FontAwesome";
 }
+
 .modal-content p {
      display: flex;
 	 justify-content: center;
@@ -302,6 +304,7 @@ text-align: center;
 /**modal2**/
 
 #pop-up {
+	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -319,6 +322,15 @@ text-align: center;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.iconeSelect {
+	position:absolute;
+	top: 81%;
+	left: 90%;
+	cursor: pointer;
+	font-family: "FontAwesome";
+	color: #6C6C6C;
 }
 #pop-up label {
 	margin-top: 10px;
