@@ -46,7 +46,7 @@ const modalContent = document.querySelector(".modal-content");
          bodyModal.appendChild(figure);
       };
 
-       btnajout.addEventListener('click', function(e){
+      btnajout.addEventListener('click', function(e){
       e.preventDefault();
       modal2();
     });
@@ -54,15 +54,27 @@ const modalContent = document.querySelector(".modal-content");
       supprimGallery.addEventListener('click', () => {
          bodyModal.innerHTML = '';
       });
+      deleteProjet();
    })};
+
+   function deleteProjet(){
+         // let deletPhoto = datas[i].imageUrl.title;
+         // figure.classList('badge')= deletPhoto;
+         deletPhoto.addEventListener('click', () => {
+         fetch("http://localhost:5678/api/works/1", {
+            method: "DELETE",
+            body: null,
+            headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            },
+         })
+         .then((response) => response.json())
+         })
+      }
  
         
    //MODAL2//
-
-   //  btnajout.addEventListener('click', function(e){
-   //    e.preventDefault();
-   //    modal2();
-   //  });
 
       function modal2() {
          bodyModal.innerHTML = '';
